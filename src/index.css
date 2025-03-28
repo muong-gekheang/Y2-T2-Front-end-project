@@ -46,6 +46,16 @@ button {
   letter-spacing: 1.5px;
 }
 
+button:hover {
+  background-color: #5A6356; /* Darker shade when hovered */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+button:active {
+  background-color: #4A513F; /* Even darker shade when clicked */
+  transform: scale(0.98); /* Slightly shrink the button when clicked */
+}
+
 .input_zone{
   display: flex;
   justify-content: flex-start;

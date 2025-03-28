@@ -18,9 +18,9 @@ function FirstScreen(){
         } else if (value === '') {
             setHour(0); 
         }
-        else {
-            setError('Hour must be between 0 and 23');
-        }
+        // else {
+        //     setError('Hour must be between 0 and 23');
+        // }
     };
 
     const handleMinChange = (e) => {
@@ -31,9 +31,9 @@ function FirstScreen(){
         else if( value === ''){
             setMinute(0);
         }
-        else {
-            setError('Minute must be between 0 and 59');
-        }
+        // else {
+        //     setError('Minute must be between 0 and 59');
+        // }
     };
 
     const handleSecondChange = (e) => {
@@ -44,10 +44,16 @@ function FirstScreen(){
         else if (value === '') {
             setSecond(0); 
         }
-        else{
-            setError('Second must be between 0 and 59');
-        }
+        // else{
+        //     setError('Second must be between 0 and 59');
+        // }
     };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter'){
+            handleStartClick();
+        }
+    }
 
     const handleStartClick = () => {
         if (hour === 0 && minute === 0 && second === 0) {
@@ -68,28 +74,31 @@ function FirstScreen(){
                 <div className="input-zone">
                     <label id = "hour">Hour</label><br></br>
                     <input type="number" className="input-box" onChange={handleHourChange} value={hour} 
+                    onKeyDown={handleKeyDown}
                     placeholder='Please enter number that in the range of 0 - 23'/>
-                    
                     <br></br>
                 </div>
 
                 <div className="input-zone">
                     <label id = "min">Minute</label><br></br>
                     <input type="number" className="input-box" onChange={handleMinChange} value={minute}
-                    placeholder='Please enter number that in the range of 0 - 59'
-                    />
+                    onKeyDown={handleKeyDown}
+                    placeholder='Please enter number that in the range of 0 - 59'/>
                     <br></br>
                 </div>
 
                 <div className="input-zone">
                     <label id="sec">Second</label><br></br>
                     <input type="number" className="input-box" onChange={handleSecondChange} value={second}
+                    onKeyDown={handleKeyDown}
                     placeholder='Please enter number that in the range of 0 - 59'/>
                     <br></br>
                 </div>
                 
                 <button id="start-button" onClick={handleStartClick} 
-                disabled = {hour === 0 && minute === 0 && second === 0} >START</button>
+                disabled = {hour === 0 && minute === 0 && second === 0 ||
+                    hour === '' && minute === '' && second === ''
+                } >START</button>
             </div>
         </>
     );

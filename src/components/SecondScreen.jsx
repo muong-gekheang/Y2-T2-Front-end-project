@@ -53,7 +53,7 @@ function SecondScreen(){
                     <div className="buttons">
                         <button onClick={handlePauseButton}>PAUSE</button>
                         <button onClick={handleResumeButton}>RESUME</button>
-                        <button onCanPlay={handleCancelButton}>CANCEL</button>
+                        <button onClick={handleCancelButton}>CANCEL</button>
                     </div>
                 </div>
             </div>
