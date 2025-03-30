@@ -47,13 +47,13 @@ button {
 }
 
 button:hover {
-  background-color: #5A6356; /* Darker shade when hovered */
-  transform: scale(1.05); /* Slightly enlarge the button on hover */
+  background-color: #5A6356; 
+  transform: scale(1.05); 
 }
 
 button:active {
-  background-color: #4A513F; /* Even darker shade when clicked */
-  transform: scale(0.98); /* Slightly shrink the button when clicked */
+  background-color: #4A513F; 
+  transform: scale(0.98);
 }
 
 .input_zone{
@@ -104,4 +104,55 @@ label{
 ::placeholder{
   color: rgb(85, 79, 79);
   font-size: 20px;
+}
+
+/* Laptop Responsiveness */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 5em;
+  }
+  .timer-display, .time-up {
+    font-size: 10em;
+  }
+  .input-box {
+    width: 350px;
+  }
+  button {
+    font-size: 1.2em;
+    padding: 0.5em 1.8em;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    padding: 20px;
+    place-items: center;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  .timer-display, .time-up {
+    font-size: 4em;
+    
+  }
+  .input-box {
+    width: 100%;
+  }
+  button {
+    font-size: 1em;
+    padding: 0.5em 1.5em;
+    margin-right: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .input_zone {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ::placeholder{
+    font-size: 12px;
+  }
 }

@@ -97,7 +97,10 @@ function FirstScreen(){
                 
                 <button id="start-button" onClick={handleStartClick} 
                 disabled = {hour === 0 && minute === 0 && second === 0 ||
-                    hour === '' && minute === '' && second === ''
+                    hour === '' && minute === '' && second === '' ||
+                    hour === '' && minute === '' && second === 0 ||
+                    hour === '' && minute === 0 && second === '' ||
+                    hour === 0 && minute === 0 && second === '' 
                 } >START</button>
             </div>
         </>
